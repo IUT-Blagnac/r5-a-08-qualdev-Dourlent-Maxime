@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
 import java.util.List;
 import java.util.ArrayList;
 
+import app.Order;
+
 public class CocktailSteps {
     private Order order;
 
@@ -44,23 +46,5 @@ public class CocktailSteps {
     public void there_is_int_cocktail_in_the_order(int nb){
         List<String> cocktails = order.getCocktails();
         assertEquals(nb, cocktails.size());
-    }
-}
-
-class Order {
-    private String owner = "";
-    private String target = "";
-    private List<String> cocktails = new ArrayList<String>();
-
-    public void declareOwner(String owner){
-        this.owner = owner;
-    }
-
-    public void declareTarget(String target){
-        this.target = target;
-    }
-
-    public List<String> getCocktails(){
-        return cocktails;
     }
 }
