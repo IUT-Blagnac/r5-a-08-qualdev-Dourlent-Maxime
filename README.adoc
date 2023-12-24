@@ -1,22 +1,62 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=13208670&assignment_repo_type=AssignmentRepo)
 = R5.A.08 -- Dépôt pour les TPs
 :icons: font
 :MoSCoW: https://fr.wikipedia.org/wiki/M%C3%A9thode_MoSCoW[MoSCoW]
 
-Ce dépôt concerne les rendus de mailto:A_changer@etu.univ-tlse2.fr[Jonh Doe].
+Ce dépôt concerne les rendus de mailto:maxime.dourlent@etu.univ-tlse2.fr[Dourlent Maxime].
 
 == TP1
 
-.Exemple de code
+=== Fichier "is_it_friday_yet.feature"
+
 [source,java]
+
+Feature: Is it Friday yet ?
+  It's important to know if it's Friday
+
+  Scenario Outline: Is today Friday
+    Given today is "<day>"
+    When I ask whether it's Friday yet
+    Then I should be told "<answer>"
+
+    Examples:
+      | day            | answer |
+      | Friday         | TGIF   |
+      | Sunday         | no     |
+      | anything else! | no     |
+
 ---
-@Given("today is Sunday")
-public void today_is_sunday() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+=== Tests
+
+image::images/TP1_tests_success.PNG[width]
+
+== TP2
+
+=== Fichier "Order.java"
+
+[source,java]
+
+package app;
+import java.util.List;
+import java.util.ArrayList;
+public class Order {
+    private String owner = "";
+    private String target = "";
+    private List<String> cocktails = new ArrayList<String>();
+    public void declareOwner(String owner){
+        this.owner = owner;
+    }
+    public void declareTarget(String target){
+        this.target = target;
+    }
+    public List<String> getCocktails(){
+        return cocktails;
+    }
 }
+
 ---
+=== Tests
 
-.Exemple d'image insérée en asciidoc
-image::artifacts-r303.svg[width=80%]
+image::images/TP2_tests_success.png[width]
 
-== TP2...
+== TP3...
